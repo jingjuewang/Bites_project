@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bites</title>
+		<style type = "text/css">
+        </style>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118680629-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-118680629-1');
+		</script>
+
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+
+	      <!-- Header -->
+	        <header id="header" class="alt">
+	          <h1 id="logo"><a href="{{ url_for('index') }}">Bites</a></h1>
+	          <nav id="nav">
+	            <ul>
+	              <li class="current"><a href="{{ url_for('index') }}">Home</a></li>
+	              <li class="submenu">
+	                <a href="#">Choose Your City</a>
+	                <ul>
+	                  <li><a href="{{ url_for('citymap') }}">San Francisco</a></li>
+	                </ul>
+	              </li>
+	              <li><a href="{{ url_for('signup') }}" class="button special">Sign Up</a></li>
+	              <li><a href="{{ url_for('signin') }}" class="button special">Log In</a></li>
+	            </ul>
+	          </nav>
+	        </header>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2>Bites</h2>
+						</header>
+						<p><strong>Let's make lunching easier</strong>.</p>
+						<footer>
+							<ul class="buttons vertical">
+								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+							</ul>
+						</footer>
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon fa-coffee"></span>
+						<h2>Bites enables you to have a quick glimpse of <br />the opening food trucks around you.</h2>
+						<p> We provide you with their updated menu, opening hour and location. Sign up or log in to get more information!</p>
+					</header>
+
+					<!-- Three -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>What's trendy near you</h2>
+							</header>
+
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="../static/images/trendy1.jpg" alt="" /></a>
+										<header>
+											<h3>Mama Chen's Vitality Bowl</h3>
+										</header>
+										<p>A newly opened healthy option featuring on vitality bowl. It's a treat for yourself with an acai bowl
+										with fresh berries on top in this summer day</p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="../static/images/trendy2.jpg" alt="" /></a>
+										<header>
+											<h3>Cheesy Easy</h3>
+										</header>
+										<p>An all time lunch champion - Cheesy Easy serves you easy bites of flavorful cheese burgers</p>
+									</section>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="../static/images/trendy3.jpg" alt="" /></a>
+										<header>
+											<h3>Taco for Life</h3>
+										</header>
+										<p>Operated by a Mexican couple, this taco corner is full of freshest salsa and happiness. Come and grab
+										a small bite. They are just by 101 Howard! </p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="../static/images/trendy4.png" alt="" /></a>
+										<header>
+											<h3>Juejue's Cafe Stand</h3>
+										</header>
+										<p>Wanna get charged and take a break from the work? Come to Juejue's Cafe to try out their signiture
+										rose honey latte. Their food truck is 5 min walk from the embacarderro!</p>
+									</section>
+
+								</div>
+							</div>
+
+							<footer class="major">
+								<ul class="buttons">
+									<li><a href="#" class="button">See More</a></li>
+								</ul>
+							</footer>
+
+						</section>
+
+				</article>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<header>
+						<h2>Ready for a quick <strong>bite</strong>?</h2>
+					</header>
+					<footer>
+						<ul class="buttons">
+							<li><a href="{{ url_for('citymap') }}" class="button">Browse the map</a></li>
+							<li><a href="{{ url_for('order') }}" class="button" onclick="gtag('event', 'onclick', {'event_category' : 'order', 'event_label' : 'order_page', 'value' : 2})" >Order</a></li>
+						</ul>
+					</footer>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Bites </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrollgress.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<!--[if lte IE 8]><script src="a{{ url_for('static', filename='assets/js/ie/respond.min.js') }}"></script><![endif]-->
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

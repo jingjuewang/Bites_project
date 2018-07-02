@@ -1,0 +1,9 @@
+- db server:
+
+Public DNS (IPv4): ec2-34-212-27-178.us-west-2.compute.amazonaws.com
+IPv4 Public IP: 34.212.27.178
+
+- web server:
+
+Public DNS (IPv4): ec2-34-212-27-178.us-west-2.compute.amazonaws.com
+IPv4 Public IP: 34.212.27.178

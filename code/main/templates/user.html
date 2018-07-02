@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+  Twenty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bites</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118680629-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118680629-1');
+    </script>
+
+  </head>
+  <body class="index">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+        <header id="header" class="alt">
+          <h1 id="logo"><a href="{{ url_for('index') }}">Bites</a></h1>
+          <nav id="nav">
+            <ul>
+              <li class="current"><a href="{{ url_for('index') }}">Welcome</a></li>
+                <li class="submenu">
+                  <a href="#">Choose Your City</a>
+                  <ul>
+                    <li><a href="{{ url_for('citymap') }}">San Francisco</a></li>
+                  </ul>
+                </li>
+              <li><a href="{{ url_for('logout') }}" class="button special">Log Out</a></li>
+            </ul>
+          </nav>
+        </header>
+
+      <!-- Log In Form -->
+        <section id="banner">
+
+          <div class="inner">
+
+            <header>
+              <h2>Bites</h2>
+            </header>
+
+            <p>Welcome, <strong>{{ username }}</strong>!</p>
+            <p>Let's make lunching easier.</p>
+            
+            <footer>
+              <ul class="buttons vertical">
+                <li><a href="{{ url_for('index') }}" class="button fit scrolly">Back to home</a></li>
+              </ul>
+            </footer>
+
+          </div>
+
+        </section>
+    </div>
+
+    <!-- Scripts -->
+      <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/jquery.scrollgress.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+      <!--[if lte IE 8]><script src="a{{ url_for('static', filename='assets/js/ie/respond.min.js') }}"></script><![endif]-->
+      <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+  </body>
+</html>

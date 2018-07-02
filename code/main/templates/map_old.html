@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bites! - San Fracisco Food Trucks</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+    html {
+        height: 100%
+    }
+
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0
+    }
+
+    #map_canvas {
+        height: 100%
+    }
+    </style>
+
+    <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0Xx0U5BJaLKKvnPb4DeBQ2RAt0UJPMn8&sensor=false">
+    </script>
+    <script type="text/javascript">
+        var truck_info = [
+        {% for t in trucks %}
+        {name:'{{ t.applicant }}', lat:{{ t.latitude }}, lng:{{ t.longitude }}},
+        {% endfor %}]
+    </script>
+    <script type="text/javascript" src="{{url_for('static', filename='truck_map.js')}}"></script>
+
+</head>
+
+<body onload="initialize()">
+    <div id="default" style="width:100%; height:100%"></div>
+</body>
+
+</html>

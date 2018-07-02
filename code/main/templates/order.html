@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bites</title>
+		<style type = "text/css">
+        </style>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118680629-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-118680629-1');
+		</script>
+
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+
+	      <!-- Header -->
+	        <header id="header" class="alt2">
+	          <h1 id="logo"><a href="{{ url_for('index') }}">Bites</a></h1>
+	          <nav id="nav">
+	            <ul>
+	              <li class="current"><a href="{{ url_for('index') }}">Home</a></li>
+	              <li class="submenu">
+	                <a href="#">Choose Your City</a>
+	                <ul>
+	                  <li><a href="{{ url_for('citymap') }}">San Francisco</a></li>
+	                </ul>
+	              </li>
+	              <li><a href="{{ url_for('signup') }}" class="button special">Sign Up</a></li>
+	              <li><a href="{{ url_for('signin') }}" class="button special">Log In</a></li>
+	            </ul>
+	          </nav>
+	        </header>
+
+			<!-- Main -->
+			<section id="bannermap">
+				<div class="inner">
+					<form action="{{ url_for('order') }}" method="post">
+						<div class='form-group'>
+
+							<div class="row">
+								<section class="4u 8u(narrower)">
+											<label><b>Pick an item</b></label><br>
+											<select class="form-control" id="item_list" name="item">
+												<option disabled selected hidden>Select one</option>
+												<option value='Sandwich'>Sandwich</option>
+												<option value='Hamburger'>Hamburger</option>
+												<option value='Noodle'>Noodle</option>
+												<option value='Bagel'>Bagel</option>
+									  			<option value='Chicken'>Chicken</option>
+											</select>
+											<br>
+								</section>
+
+								<section class="4u 8u(narrower)">
+											<label><b>Pick a day</b></label><br>
+											<select class="form-control" id="day_list" name="day">
+												<option disabled selected hidden>Select one</option>
+												<option value='Mo'>Monday</option>
+												<option value='Tu'>Tuesday</option>
+												<option value='We'>Wednesday</option>
+												<option value='Th'>Thursday</option>
+												<option value='Fr'>Friday</option>
+												<option value='Sa'>Saturday</option>
+												<option value='Su'>Sunday</option>
+											</select>
+											<br>
+								</section>
+
+								<section class="4u 8u(narrower)">
+									<input type="submit" value="Submit">
+								</section>
+							</div>
+					</div>
+				</form><br><br><br>
+
+                {% for d in order_data %}
+				<div class="row">
+					<section class="8u 12u(narrower)">
+						<header>
+							<h3>{{d[0]}}</h3>
+						</header>
+						<p><b>Menu info:</b><br>
+						{{d[1]}}</p>
+                        <p><b>Operation days:</b><br>
+						{{d[2]}}</p>
+					</section>
+
+					<section class="2u 12u(narrower)">
+						<a href="#" class="button" onmouseover="gtag('event', 'hover', {'event_category' : 'order', 'event_label' : 'order_food', 'value' : 5})"><b>Order</b></a>
+					</section>
+				</div>
+				{% endfor %}	
+
+				</div>
+			</section>
+
+
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Bites </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrollgress.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<!--[if lte IE 8]><script src="a{{ url_for('static', filename='assets/js/ie/respond.min.js') }}"></script><![endif]-->
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>
